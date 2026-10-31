@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.show-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.show-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 220px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.show-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
