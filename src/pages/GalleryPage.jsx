@@ -1,7 +1,6 @@
-// src/pages/GalleryPage.jsx
 import SearchForm from '../components/SearchForm';
 import ShowList from '../components/ShowList';
-import SearchInfo from '../components/SearchInfo'; // Optional component checking your files
+import SearchInfo from '../components/SearchInfo';
 
 export default function GalleryPage({ query, setQuery, onSubmit, shows, status, errorMessage, searchTerm }) {
   return (

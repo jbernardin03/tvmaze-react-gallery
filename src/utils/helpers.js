@@ -1,4 +1,3 @@
-// src/utils/helpers.js
 export function stripHtml(html) {
   if (!html) return "Not available";
   const doc = new DOMParser().parseFromString(html, "text/html");

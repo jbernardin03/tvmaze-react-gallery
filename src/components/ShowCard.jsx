@@ -1,4 +1,3 @@
-// src/components/ShowCard.jsx
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CastList from './CastList';
@@ -18,7 +17,6 @@ export default function ShowCard({ show }) {
           if (isMounted) setCast(data);
         }
       } catch (err) {
-        // Fail silently or handle gracefully so it doesn't break the card
         console.error("Failed to load cast", err);
       } finally {
         if (isMounted) setCastLoading(false);
@@ -29,30 +27,30 @@ export default function ShowCard({ show }) {
   }, [show.id]);
 
   return (
-    <div className="show-card">
+    <div className="show-card" style={{ background: 'white', border: '1px solid #ddd', borderRadius: '8px', width: '240px', padding: '15px', boxShadow: '0 2px 5px rgba(0,0,0,0.1)' }}>
       {show.image?.medium ? (
-        <img src={show.image.medium} alt={`Poster for ${show.name}`} className="show-poster" />
+        <img src={show.image.medium} alt={`Poster for ${show.name}`} className="show-poster" style={{ width: '100%', borderRadius: '4px' }} />
       ) : (
-        <div className="no-image">No Image Available</div>
+        <div className="no-image" style={{ height: '300px', background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#666' }}>Not available</div>
       )}
 
-      <div className="show-info">
-        <h2>
+      <div className="show-info" style={{ marginTop: '10px' }}>
+        <h3 style={{ margin: '5px 0' }}>
           <Link to={`/shows/${show.id}`}>{show.name}</Link>
-        </h2>
-        <p className="summary">{stripHtml(show.summary)}</p>
-        <p><strong>Premiered:</strong> {formatDate(show.premiered)}</p>
-        <p><strong>Last Updated:</strong> {formatDateTime(show.updated)}</p>
-        <p><strong>Genres:</strong> {show.genres?.length ? show.genres.join(', ') : 'Not available'}</p>
-        <p><strong>Rating:</strong> {fallback(show.rating?.average)}</p>
+        </h3>
+        <p className="summary" style={{ fontSize: '14px', color: '#444' }}>{stripHtml(show.summary)}</p>
+        <p style={{ fontSize: '13px' }}><strong>Premiered:</strong> {formatDate(show.premiered)}</p>
+        <p style={{ fontSize: '13px' }}><strong>Updated:</strong> {formatDateTime(show.updated)}</p>
+        <p style={{ fontSize: '13px' }}><strong>Genres:</strong> {show.genres?.length ? show.genres.join(', ') : 'Not available'}</p>
+        <p style={{ fontSize: '13px' }}><strong>Rating:</strong> {fallback(show.rating?.average)}</p>
         
         {castLoading ? (
-          <p>Loading cast...</p>
+          <p style={{ fontSize: '13px' }}>Loading cast...</p>
         ) : (
-          <CastList cast={cast} limit={5} />
+          <div style={{ fontSize: '13px' }}><CastList cast={cast} limit={3} /></div>
         )}
 
-        <p>
+        <p style={{ marginTop: '10px', fontSize: '13px' }}>
           <a href={show.url} target="_blank" rel="noreferrer">View on TVmaze</a>
         </p>
       </div>

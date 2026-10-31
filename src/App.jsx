@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import GalleryPage from './pages/GalleryPage';
@@ -34,7 +33,7 @@ export default function App() {
           setStatus('empty');
           setShows([]);
         } else {
-          setShows(data.slice(0, 10)); // Max 10 shows
+          setShows(data.slice(0, 10));
           setStatus('success');
         }
       } catch (err) {
