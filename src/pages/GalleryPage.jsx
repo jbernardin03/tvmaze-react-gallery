@@ -1,3 +1,4 @@
+import React from 'react';
 import SearchForm from '../components/SearchForm';
 import ShowList from '../components/ShowList';
 import SearchInfo from '../components/SearchInfo';

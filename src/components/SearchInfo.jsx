@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function SearchInfo({ count, searchTerm, status }) {
   if (status !== 'success') return null;
   return (

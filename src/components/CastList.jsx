@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function CastList({ cast, limit }) {
   if (!cast || cast.length === 0) return <span>Cast: Not available</span>;
 

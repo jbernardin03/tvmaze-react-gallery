@@ -1,3 +1,4 @@
+import React from 'react';
 import ShowCard from './ShowCard';
 
 export default function ShowList({ shows, status, errorMessage }) {

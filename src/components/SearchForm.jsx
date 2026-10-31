@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function SearchForm({ query, setQuery, onSubmit }) {
   return (
     <form onSubmit={onSubmit} className="search-form" style={{ margin: '20px 0' }}>
